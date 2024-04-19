@@ -57,5 +57,21 @@ app.get('/', (req, res) => {
     });
 });
 
+app.get('/menu', (req, res) => {
+    res.render('menu.ejs', {
+        menu: RESTAURANT.menu
+    });
+});
+
+app.get('/menu/:category', (req, res)=>{
+
+    const menuItems = RESTAURANT.menu.filter(x => x.category === req.params.category)
+    const name = req.params.category.charAt(0).toUpperCase() + req.params.category.slice(1)
+
+    res.render('category.ejs', {
+      menuItems: menuItems,
+      name: name
+    })
+})
 
 app.listen(3000);

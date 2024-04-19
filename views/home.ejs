@@ -6,9 +6,12 @@
   <title><%= rest.name %></title>
 </head>
 <body>
-  <h1><%= rest.name %></h1>
-  <h3>Address: <%= rest.address %></h3>
-  <h3>Phone: <%= rest.phone %></h3>
+    <%- include('./partials/nav') %>
+
+    <h1><%= rest.name %></h1>
+    <h3>Address: <%= rest.address %></h3>
+    <h3>Phone: <%= rest.phone %></h3>
+    
     <% if (rest.isOpen){ %>
         <p>Yes we are open!</p>
     <% } else { %>
