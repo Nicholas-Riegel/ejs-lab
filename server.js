@@ -69,10 +69,8 @@ app.get('/menu/:category', (req, res)=>{
     const menuItems = RESTAURANT.menu.filter(x => x.category === category)
     category = category.charAt(0).toUpperCase() + category.slice(1)
 
-    res.render('category.ejs', {
-      menuItems,
-      category
-    })
+    res.render('category.ejs', {menuItems, category})
+    
 })
 
 app.listen(3000);
