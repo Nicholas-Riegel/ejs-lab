@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>name</title>
+  <title><%= category %></title>
 </head>
 <body>
     <%- include('./partials/nav') %>
 
-    <h2><%= name %></h2>
+    <h2><%= category %></h2>
     <% menuItems.forEach(x=> { %>
         <!-- name -->
-        <h2><%=x.name %></h2>
+        <h2><%= x.name %></h2>
         <!-- price -->
-        <h3>Price: <%=x.price %></h3>
+        <h3>Price: <%= x.price %></h3>
         <!-- rating -->
-        <h3>Rating: <%=x.rating %></h3>
+        <h3>Rating: <%= x.rating %></h3>
         <!-- details -->
-        <p>Details: <%=x.details %></p>
+        <p>Details: <%= x.details %></p>
     <% })%>
     
 </body>

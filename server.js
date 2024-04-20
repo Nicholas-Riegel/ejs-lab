@@ -65,12 +65,13 @@ app.get('/menu', (req, res) => {
 
 app.get('/menu/:category', (req, res)=>{
 
-    const menuItems = RESTAURANT.menu.filter(x => x.category === req.params.category)
-    const name = req.params.category.charAt(0).toUpperCase() + req.params.category.slice(1)
+    let category = req.params.category;
+    const menuItems = RESTAURANT.menu.filter(x => x.category === category)
+    category = category.charAt(0).toUpperCase() + category.slice(1)
 
     res.render('category.ejs', {
       menuItems: menuItems,
-      name: name
+      category: category
     })
 })
 
