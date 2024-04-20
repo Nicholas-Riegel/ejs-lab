@@ -70,8 +70,8 @@ app.get('/menu/:category', (req, res)=>{
     category = category.charAt(0).toUpperCase() + category.slice(1)
 
     res.render('category.ejs', {
-      menuItems: menuItems,
-      category: category
+      menuItems,
+      category
     })
 })
 
